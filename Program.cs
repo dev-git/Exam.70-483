@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exam._70_483.Csl
+namespace Exam.Seventy_483.Csl
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            //Parallel.Invoke(() => Task1(), () => Task2());
+            Console.WriteLine("Finished processing. Press a key to end.");
+            Console.ReadKey();
+
         }
     }
 }
