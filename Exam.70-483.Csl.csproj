@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D3B5681C-E664-480A-819B-7D9937FC61F6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Exam._70_483.Csl</RootNamespace>
+    <RootNamespace>Exam.Seventy_483.Csl</RootNamespace>
     <AssemblyName>Exam.70-483.Csl</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -44,7 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chapter 1\Parrallel_Invoke.cs" />
+    <Compile Include="Chapter 1\Parallel_For.cs" />
+    <Compile Include="Chapter 1\Parallel_Invoke.cs" />
+    <Compile Include="Chapter 1\Parallel_Linq.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

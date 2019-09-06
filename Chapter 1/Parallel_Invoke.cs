@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Exam.Seventy_483.Csl
+namespace Exam.Seventy_483.Csl.Chapter1
 {
-    public class Parrallel_Invoke
+    public class Parallel_Invoke
     {
         public static void Task1()
         {
