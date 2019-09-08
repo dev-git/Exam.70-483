@@ -47,6 +47,7 @@
     <Compile Include="Chapter 1\Parallel_For.cs" />
     <Compile Include="Chapter 1\Parallel_Invoke.cs" />
     <Compile Include="Chapter 1\Parallel_Linq.cs" />
+    <Compile Include="Chapter 1\Task.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
