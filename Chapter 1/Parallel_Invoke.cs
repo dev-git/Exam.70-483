@@ -22,5 +22,10 @@ namespace Exam.Seventy_483.Csl.Chapter1
             Thread.Sleep(1000);
             Console.WriteLine("Task 2 ending");
         }
+
+        public static void Invoke()
+        {
+            Parallel.Invoke(() => Task1(), () => Task2());
+        }
     }
 }
