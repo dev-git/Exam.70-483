@@ -229,5 +229,67 @@ namespace Exam.Seventy_483.Csl.Chapter1
             sharedTotal = sharedTotal + subTotal;
             Monitor.Exit(sharedTotalLock);
         }
+
+        static CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+
+        static void Clock()
+        {
+            while (!cancellationTokenSource.IsCancellationRequested)
+            {
+                Console.WriteLine("Tick");
+                Thread.Sleep(500);
+            }
+        }
+
+        static void Clock(CancellationToken cancellationToken)
+        {
+            int tickCount = 0;
+
+            while (!cancellationToken.IsCancellationRequested && tickCount < 20)
+            {
+                tickCount++;
+                Console.WriteLine("Tick");
+                Thread.Sleep(500);
+            }
+
+            cancellationToken.ThrowIfCancellationRequested();
+        }
+
+        public static void CancelTask()
+        {
+            Task.Run(() => Clock());
+            Console.WriteLine("Press any key to stop the clock");
+            Console.ReadKey();
+            cancellationTokenSource.Cancel();
+            Console.WriteLine("Clock stopped");
+        }
+
+        public static void CancelWithException()
+        {
+            CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+
+            Task clock = Task.Run(() => Clock(cancellationTokenSource.Token));
+
+            Console.WriteLine("Press any key to stop the clock");
+
+            Console.ReadKey();
+
+            if (clock.IsCompleted)
+            {
+                Console.WriteLine("Clock task completed");
+            }
+            else
+            {
+                try
+                {
+                    cancellationTokenSource.Cancel();
+                    clock.Wait();
+                }
+                catch (AggregateException ex)
+                {
+                    Console.WriteLine("Clock stopped: {0}", ex.InnerExceptions[0].ToString());
+                }
+            }
+        }
     }
 }

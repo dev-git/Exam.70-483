@@ -333,5 +333,60 @@ namespace Exam.Seventy_483.Csl.Chapter1
                 ages.AddOrUpdate("Rob", 1, (name, age) => age = age + 1));
             Console.WriteLine("Rob's new age: {0}", ages["Rob"]);
         }
+
+        static object lock1 = new object();
+        static object lock2 = new object();
+
+        static void Method1()
+        {
+            lock (lock1)
+            {
+                Console.WriteLine("Method 1 got lock 1");
+                Console.WriteLine("Method 1 waiting for lock 2");
+                lock (lock2)
+                {
+                    Console.WriteLine("Method 1 got lock 2");
+                }
+                Console.WriteLine("Method 1 released lock 2");
+            }
+            Console.WriteLine("Method 1 released lock 1");
+        }
+
+        static void Method2()
+        {
+            lock (lock2)
+            {
+                Console.WriteLine("Method 2 got lock 2");
+                Console.WriteLine("Method 2 waiting for lock 1");
+                lock (lock1)
+                {
+                    Console.WriteLine("Method 2 got lock 1");
+                }
+                Console.WriteLine("Method 2 released lock 1");
+            }
+            Console.WriteLine("Method 2 released lock 2");
+        }
+
+        public static void SequentialLock()
+        {
+            Method1();
+            Method2();
+            Console.WriteLine("Methods complete. Press any key to exit.");
+            Console.ReadKey();
+        }
+
+        /* The volatile keyword can only be applied to fields of a class or struct. Local variables cannot be declared volatile. */
+        volatile static  int x;
+
+        /* Operations involving the variable x will now not be optimized, and the value of x will be
+            fetched from the copy in memory, rather than being cached in the processor. This can make
+            operations involving the variable x a lot less efficient. */
+        public static void Volatile()
+        {
+            int y = 0;
+            x = 99;
+            y = y + 1;
+            Console.WriteLine("The answer is: {0}", x);
+        }
     }
 }

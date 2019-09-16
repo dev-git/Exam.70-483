@@ -48,8 +48,14 @@ namespace Exam.Seventy_483.Csl
             //Chapter1.MyThread.ConcurrentStack();
             //Chapter1.MyThread.ConcurrentBag();
             //Chapter1.MyThread.ConcurrentDictionary();
+
             //Chapter1.MyTask.TaskSumming();
-            Chapter1.MyTask.BadTask();   
+            //Chapter1.MyTask.BadTask();
+
+            //Chapter1.MyThread.SequentialLock();
+            //Chapter1.MyThread.Volatile();
+            //Chapter1.MyTask.CancelTask();
+            Chapter1.MyTask.CancelWithException();
 
 
             Console.WriteLine("Finished processing. Press a key to end.");
