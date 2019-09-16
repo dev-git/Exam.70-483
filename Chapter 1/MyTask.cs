@@ -204,7 +204,8 @@ namespace Exam.Seventy_483.Csl.Chapter1
                 int rs = rangeStart;
                 int re = rangeEnd;
 
-                tasks.Add(Task.Run(() => addRangeOfValuesSensible(rs, re)));
+                //tasks.Add(Task.Run(() => addRangeOfValuesSensible(rs, re)));
+                tasks.Add(Task.Run(() => addRangeOfValuesMonitored(rs, re)));
                 rangeStart = rangeEnd;
 
             }
@@ -212,6 +213,21 @@ namespace Exam.Seventy_483.Csl.Chapter1
 
             Console.WriteLine("The total is: {0}", sharedTotal);
 
+        }
+
+        static void addRangeOfValuesMonitored(int start, int end)
+        {
+            long subTotal = 0;
+
+            while (start < end)
+            {
+                subTotal = subTotal + items[start];
+                start++;
+            }
+
+            Monitor.Enter(sharedTotalLock);
+            sharedTotal = sharedTotal + subTotal;
+            Monitor.Exit(sharedTotalLock);
         }
     }
 }
