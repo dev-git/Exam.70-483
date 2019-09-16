@@ -39,7 +39,17 @@ namespace Exam.Seventy_483.Csl
             //Chapter1.MyThread.ThreadData();
             //Chapter1.MyThread.ThreadAbort();
             //Chapter1.MyThread.ThreadAbortWithFlag();
-            Chapter1.MyThread.ThreadJoin();
+            //Chapter1.MyThread.ThreadJoin();
+            //Chapter1.MyThread.ThreadLocalRun();
+            //Chapter1.MyThread.ThreadContext().
+            //Chapter1.MyThread.ThreadPoolRun();
+            //Chapter1.MyThread.RunComputeAverages(10000000);
+            //Chapter1.MyThread.BlockingCollection();
+            //Chapter1.MyThread.ConcurrentStack();
+            //Chapter1.MyThread.ConcurrentBag();
+            //Chapter1.MyThread.ConcurrentDictionary();
+            //Chapter1.MyTask.TaskSumming();
+            Chapter1.MyTask.BadTask();   
 
 
             Console.WriteLine("Finished processing. Press a key to end.");

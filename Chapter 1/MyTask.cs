@@ -85,7 +85,8 @@ namespace Exam.Seventy_483.Csl.Chapter1
         {
             /* Note that tasks created using the Task.Run method have the TaskCreationOptions.DenyChildAttach option set, 
              * and therefore can’t have attached child tasks */
-            var parent = Task.Factory.StartNew(() => {
+            var parent = Task.Factory.StartNew(() =>
+            {
                 Console.WriteLine("Parent starts");
                 for (int i = 0; i < 10; i++)
                 {
@@ -134,6 +135,83 @@ namespace Exam.Seventy_483.Csl.Chapter1
             Console.WriteLine("Child {0} finished", state);
         }
 
+        // make an array that holds the values 0 to 50000000
+        private static int[] items = Enumerable.Range(0, 50000001).ToArray();
+        public static void TaskSumming()
+        {
 
+            long total = 0;
+
+            for (int i = 0; i < items.Length; i++)
+                total = total + items[i];
+
+            Console.WriteLine("The total is: {0}", total);
+
+        }
+
+        private static object sharedTotalLock = new object();
+        private static long sharedTotal;
+
+        static void addRangeOfValues(int start, int end)
+        {
+            //while (start < end)
+            //{
+            //    sharedTotal = sharedTotal + items[start]; start++;
+            //}
+
+            //return;
+            while (start < end)
+            {
+                lock (sharedTotalLock)
+                {
+                    sharedTotal = sharedTotal + items[start];
+                }
+                start++;
+            }
+        }
+
+
+        static void addRangeOfValuesSensible(int start, int end)
+        {
+            long subTotal = 0;
+
+            while (start < end)
+            {
+                subTotal = subTotal + items[start];
+                start++;
+            }
+            lock (sharedTotalLock)
+            {
+                sharedTotal = sharedTotal + subTotal;
+            }
+        }
+
+        public static void BadTask()
+        {
+            List<Task> tasks = new List<Task>();
+
+            int rangeSize = 1000;
+            int rangeStart = 0;
+
+            while (rangeStart < items.Length)
+            {
+                int rangeEnd = rangeStart + rangeSize;
+
+                if (rangeEnd > items.Length)
+                    rangeEnd = items.Length;
+
+                // create local copies of the parameters
+                int rs = rangeStart;
+                int re = rangeEnd;
+
+                tasks.Add(Task.Run(() => addRangeOfValuesSensible(rs, re)));
+                rangeStart = rangeEnd;
+
+            }
+            Task.WaitAll(tasks.ToArray());
+
+            Console.WriteLine("The total is: {0}", sharedTotal);
+
+        }
     }
 }
