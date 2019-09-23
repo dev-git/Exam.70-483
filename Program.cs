@@ -55,8 +55,22 @@ namespace Exam.Seventy_483.Csl
             //Chapter1.MyThread.SequentialLock();
             //Chapter1.MyThread.Volatile();
             //Chapter1.MyTask.CancelTask();
-            Chapter1.MyTask.CancelWithException();
+            //Chapter1.MyTask.CancelWithException();
 
+            //Chapter1.MyEvent.CreateAlarm();
+            //Chapter1.MyEvent.Unsubscribe();
+            //Chapter1.MyEvent.TestEventHandler();
+            //Chapter1.MyEvent.TestEventDataHandler();
+
+            //Chapter1.MyEvent.TestAlarmException();
+            //Chapter1.MyDelegate.TestMyDelegate();
+            //Chapter1.LamdaExpression.TestLamda();
+            //Chapter1.LamdaClosure.TestClosure();
+            //Chapter1.BuiltinDelegate.Test();
+            //Chapter1.LamdaExpression.TestTask();    
+            Chapter1.LamdaExpression.MyTask();
+
+            //Chapter2.MyType.MainType(null);
 
             Console.WriteLine("Finished processing. Press a key to end.");
             Console.ReadKey();

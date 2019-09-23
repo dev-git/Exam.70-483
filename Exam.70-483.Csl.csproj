@@ -44,19 +44,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chapter 1\MyEvent.cs" />
+    <Compile Include="Chapter 1\MyException.cs" />
     <Compile Include="Chapter 1\MyThread.cs" />
     <Compile Include="Chapter 1\Parallel_For.cs" />
     <Compile Include="Chapter 1\Parallel_Invoke.cs" />
     <Compile Include="Chapter 1\Parallel_Linq.cs" />
     <Compile Include="Chapter 1\MyTask.cs" />
+    <Compile Include="Chapter 2\MyType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Chapter 2\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
