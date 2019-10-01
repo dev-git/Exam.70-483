@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Exam.Seventy_483.Csl
 {
+    using ExtensionMethods;
+
     public class Program
     {
         public static void Main(string[] args)
@@ -68,10 +70,24 @@ namespace Exam.Seventy_483.Csl
             //Chapter1.LamdaClosure.TestClosure();
             //Chapter1.BuiltinDelegate.Test();
             //Chapter1.LamdaExpression.TestTask();    
-            Chapter1.LamdaExpression.MyTask();
+            //Chapter1.LamdaExpression.MyTask();
+            //Chapter1.MyFlow.TestLogicalExpressionsShortCircuit();
+
+            //Chapter1.MyException.InnerException();
+            //Chapter1.MyException.TestCustomException();
+            //Chapter1.MyException.TestConditionalException();
+            //Chapter1.MyException.HandleInnerException();
+
+
 
             //Chapter2.MyType.MainType(null);
+            //Chapter2.MyType.TestAlienStruct();
+            //Chapter2.MyType.TestAlienClass();
 
+            //Chapter2.MyType.TestMyStack();
+            //Chapter2.MyType.TestGenericValueType();
+            Chapter2.MyType.TestParameters();
+            
             Console.WriteLine("Finished processing. Press a key to end.");
             Console.ReadKey();
 

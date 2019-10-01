@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chapter 1\MyFlow.cs" />
     <Compile Include="Chapter 1\MyEvent.cs" />
     <Compile Include="Chapter 1\MyException.cs" />
     <Compile Include="Chapter 1\MyThread.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Chapter 1\Parallel_Invoke.cs" />
     <Compile Include="Chapter 1\Parallel_Linq.cs" />
     <Compile Include="Chapter 1\MyTask.cs" />
+    <Compile Include="Chapter 2\MyExtensionMethod.cs" />
     <Compile Include="Chapter 2\MyType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -268,7 +268,7 @@ namespace Exam.Seventy_483.Csl.Chapter1
         delegate int IntOperation(int a, int b);
 
         // The operator => is called the lambda operator.
-        static IntOperation add = (a, b) => a + b;
+        static IntOperation add = (a, b) => { return 1; };// a + b + 1;
 
         delegate int op(int i);
 
@@ -285,6 +285,8 @@ namespace Exam.Seventy_483.Csl.Chapter1
                 Console.WriteLine("Add called");
                 return a + b;
             };
+
+            Console.WriteLine("Calling add {0}", add(3, 3));
         }
 
         public static void TestTask()

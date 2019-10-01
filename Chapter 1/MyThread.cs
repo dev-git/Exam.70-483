@@ -175,12 +175,12 @@ namespace Exam.Seventy_483.Csl.Chapter1
 
         /* if you create a large number of threads that may be idle for a very long time, this may
             block the ThreadPool, because the ThreadPool only contains a finite number of threads. 
-             ■
+  
             You cannot manage the priority of threads in the ThreadPool.
-             ■
+
             Threads in the ThreadPool have background priority. You cannot obtain a thread with
             foreground priority from the ThreadPool.
-             ■
+ 
             Local state variables are not cleared when a ThreadPool thread is reused. They therefore
             should not be used. 
         */
