@@ -52,6 +52,9 @@
     <Compile Include="Chapter 1\Parallel_Invoke.cs" />
     <Compile Include="Chapter 1\Parallel_Linq.cs" />
     <Compile Include="Chapter 1\MyTask.cs" />
+    <Compile Include="Chapter 2\MyAccount.cs" />
+    <Compile Include="Chapter 2\MyConsumeType.cs" />
+    <Compile Include="Chapter 2\MyEncapsulation.cs" />
     <Compile Include="Chapter 2\MyExtensionMethod.cs" />
     <Compile Include="Chapter 2\MyType.cs" />
     <Compile Include="Program.cs" />

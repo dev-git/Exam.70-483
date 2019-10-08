@@ -304,8 +304,102 @@ namespace Exam.Seventy_483.Csl.Chapter2
                 set { array[i] = value; }
             }
         }
+
+        public static void TestMyIntArray()
+        {
+            IntArrayWrapper x = new IntArrayWrapper();
+
+            x[0] = 99;
+            Console.WriteLine(x[0]);
+
+            NamedIntArray xx = new NamedIntArray(); 
+            xx["zero"] = 99;
+            Console.WriteLine(xx["zero"]);
+
+        }
+
+        class NamedIntArray
+        {
+            // Create an array to store the values
+            private int[] array = new int[100];
+
+            // Declare an indexer property
+            public int this[string name]
+            {
+                get
+                {
+                    switch (name)
+                    {
+                        case "zero":
+                            return array[0];
+                        case "one":
+                            return array[1];
+                        default:
+                            return -1;
+                    }
+                }
+                set
+                {
+                    switch (name)
+                    {
+                        case "zero":
+                            array[0] = value;
+                            break;
+                        case "one":
+                            array[1] = value;
+                            break;
+                    }
+                }
+            }
+        }
+
+        /* The underlying principle of a class hierarchy is that classes at the top of the hierarchy 
+         * are more abstract, and classes toward the bottom of the hierarchy are more specific */
+
+        class Document
+        {
+            // All documents have the same GetDate behavior so
+            // this method will not be overridden
+            public void GetDate()
+            {
+                Console.WriteLine("Hello from GetDate in Document");
+            }
+
+            // A document may have its own DoPrint behavior so
+            // this method is virtual so it can be overriden
+            public virtual void DoPrint()
+            {
+                Console.WriteLine("Hello from DoPrint in Document");
+            }
+        }
+
+        // The Invoice class derives from the Document class
+        class Invoice : Document
+        {
+            // Override the DoPrint method in the base class
+            // to provide custom printing behaviour for an Invoice
+            public override void DoPrint()
+            {
+                base.DoPrint();
+                Console.WriteLine("Hello from DoPrint in Invoice");
+            }
+        }
+
+
+        public static void TestOverriding()
+        {
+            // Create an Invoice
+            Invoice c = new Invoice();
+            // This will run the SetDate method from Document
+            c.GetDate();
+            // This will run the DoPrint method from Invoice 
+            c.DoPrint();
+            
+
+        }
     }
 }
+ 
  
  
  

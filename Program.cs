@@ -86,8 +86,12 @@ namespace Exam.Seventy_483.Csl
 
             //Chapter2.MyType.TestMyStack();
             //Chapter2.MyType.TestGenericValueType();
-            Chapter2.MyType.TestParameters();
-            
+            //Chapter2.MyType.TestParameters();
+            //Chapter2.MyType.TestOverriding();
+
+            Chapter2.MyAccount.TestBabyAccount();
+
+
             Console.WriteLine("Finished processing. Press a key to end.");
             Console.ReadKey();
 
