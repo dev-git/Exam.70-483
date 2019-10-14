@@ -311,6 +311,7 @@ namespace Exam.Seventy_483.Csl.Chapter1
         public static void MyTask()
         {
             myvar = () => { Console.WriteLine("hi"); };
+            //myvar;
         }
 
     }

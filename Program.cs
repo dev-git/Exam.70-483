@@ -90,8 +90,15 @@ namespace Exam.Seventy_483.Csl
             //Chapter2.MyAccount.TestBabyAccount();
             //Chapter2.MyAccount.TestAccountSort();
             //Chapter2.MyAccount.TestEnumThing();
-            Chapter2.MyAccount.TestBetterEnumThing();
-            Chapter2.MyAccount.TestMyYield();
+            //Chapter2.MyAccount.TestBetterEnumThing();
+            //Chapter2.MyAccount.TestMyYield();
+
+            //Chapter2.MySerializable.TestCondition();
+            //Chapter2.MySerializable.TestAttribute();
+            //Chapter2.MyReflection.TestMyReflection();
+            //Chapter2.MyReflection.TestAssembly();
+            //Chapter2.MyReflection.TestCodeDOM();
+            Chapter2.MyReflection.TestLamdaExpressionTree();
 
 
             Console.WriteLine("Finished processing. Press a key to end.");
